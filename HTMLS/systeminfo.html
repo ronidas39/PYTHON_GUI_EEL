@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTAL SYSTEM CHECK FROM TOTAL TECHNOLOGY</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/eel.js"></script>
+    <script>
+        async function redirect(){
+            document.body.innerHTML="";
+            let n =await eel.generate_data()();
+            var div=document.createElement("div");
+            div.setAttribute("class","output");
+            document.body.appendChild(div);
+            var p=document.createElement("h1");
+            var t=document.createTextNode("GENERATED RESULTS:");
+            p.appendChild(t);
+            div.appendChild(p);
+            var table=document.createElement("table");
+            var i=0;
+            for (const[key,value] of Object.entries(n)){
+                var row=table.insertRow(i)
+                var cell1=row.insertCell(0)
+                var cell2=row.insertCell(1)
+                cell1.innerHTML=key;
+                cell2.innerHTML=value;
+                div.appendChild(table);
+                i=i+1;
+
+            }
+           var button=document.createElement("button")
+           button.innerHTML="GO BACK"
+           button.onclick=function(){
+               window.location.replace("systeminfo.html");
+           }
+
+           div.appendChild(button);
+                       
+        }
+
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="inner">
+            <p>Welcome To Total Check ,From Total Technology</p>
+            
+        </div>
+
+        <div class="inner">
+            <p>Click on the Check Now Button</p>
+        </div>
+    </div>
+
+    <div class="submit">
+        <button type="submit" onclick="redirect()">Check Now</button>
+    </div>
+    
+</body>
+</html>
