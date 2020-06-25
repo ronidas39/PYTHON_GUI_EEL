@@ -1,0 +1,64 @@
+section{
+    background-image: url('bg.svg');
+    background-size: 100% 800px;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 800px;
+}
+
+form{
+    text-align: center;
+    margin-top: 50px;
+}
+label{
+    font-size: 20px;
+    color: floralwhite;
+}
+input{
+    width: 300px;
+}
+.container-fluid{
+    background-color: black;
+    height: 200px;
+    text-align: center;
+}
+button{
+    background-color: green;
+    padding: 15px 20px;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 16px;
+    width: 200px;
+}
+button:hover{
+    background-color: yellow;
+}
+button:active{
+    box-shadow: 0 5px goldenrod;
+    transform: translateY(5px);
+}
+h1{
+    font-size: 20px;
+    color: floralwhite;
+    text-align: center;
+
+}
+table.center{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    color: yellow;
+    font-size: 16px;
+    background-color: black;
+    border-color: red;
+}
+td{
+    border: 1px solid red;
+}
+img{
+    margin: 0 auto;
+    width: 650px;
+    left: 18%;
+    position: absolute;
+    padding: auto;
+}
