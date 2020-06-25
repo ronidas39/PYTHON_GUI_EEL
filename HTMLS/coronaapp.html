@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona App</title>
+    <link rel="stylesheet" href="corona.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="/eel.js"></script>
+    <script>
+        async function generate_data(){
+            var country_name=document.getElementById("country").value;
+            if(country_name=='')
+            alert("please enter the country name");
+            else{
+                var corona_data=await eel.get_data(country_name)();
+                if(corona_data=='country not found')
+                alert('please enter the correct country name')
+                else{
+                    document.getElementById("head").innerHTML='';
+                    var button=document.getElementById('submit');
+                    button.innerHTML='GO BACK'
+                    button.onclick=function(){
+                        window.location.replace('coronaapp.html');
+                    }
+                    var head=document.getElementById("head");
+                    var p=document.createElement('h1');
+                    var t=document.createTextNode("GENERTAED RESULTS FOR: "+country_name.toUpperCase());
+                    p.appendChild(t);
+                    head.appendChild(p);
+                    var i=0;
+                    var table=document.createElement('table');
+                    table.setAttribute("class","center");
+                    for (const[key,value] of Object.entries(corona_data)){
+                        var row=table.insertRow(i);
+                        var cell1=row.insertCell(0);
+                        var cell2=row.insertCell(1);
+                        cell1.innerHTML=key;
+                        cell2.innerHTML=value;
+                        head.appendChild(table);
+                        i=i+1;
+                    }
+                    var br=document.createElement('br');
+                    head.appendChild(br);
+                    head.appendChild(br);
+
+                    var img=document.createElement('img');
+                    img.src=country_name+'.png';
+                    head.append(img);
+
+
+
+
+
+                    
+                }
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <section id="head" class="head">
+        <h1 style="color: floralwhite;font-size: 50px;font-weight: bolder;text-align: center;">Please Enter The Country Name</h1>
+        <form>
+            <label for="county">Country Name:</label>
+            <Input type="text" id="country" name="country" placeholder="country name"></Input>
+        </form>
+    </section>
+    <div class="container-fluid">
+        <button id="submit" type="submit" onclick="generate_data()">Submit</button>
+    </div>
+</body>
+</html>
