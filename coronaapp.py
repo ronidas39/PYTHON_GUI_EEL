@@ -51,7 +51,8 @@ def get_data(cname):
             plt.xlabel('All CATEGORIES',fontsize=50,color='red',fontweight='bold')
             plt.grid(b=True,which='both',color='white',linestyle='-')
             plt.title('Live Data of Corona Virus For: '+cname.upper(),color='blue',fontsize=80)
-            plt.savefig('C:\\Users\\ronidas\\Desktop\\PYTHON_GUI_EEL\\HTMLS\\'+cname+'.png',bbox_inches='tight')
+            plt.savefig("/Users/roni/Documents/GitHub/PYTHON_GUI_EEL/HTMLS/"+cname+'.png',bbox_inches='tight')
+            
 
 
 
