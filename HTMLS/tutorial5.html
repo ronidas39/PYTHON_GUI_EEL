@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style5.css">
+    <title>Document</title>
+</head>
+<body>
+<nav id="navbar">
+    <ul>
+        <li>
+        <a href="#">HOME</a>
+        </li>
+        <li>
+            <a href="#">SERVICES</a>
+        </li>
+        <li>
+            <a href="#">CONTACT US</a>
+        <li>
+            <a href="#">ABOUT US</a>
+        </li>
+    </ul>
+</nav>
+<section id="menu">
+    <div class="menu"></div>
+    <div class="menu"></div>
+    <div class="menu"></div>
+
+</section>
+<script>
+    var nav=document.getElementById("navbar")
+    var menu=document.getElementById("menu")
+    nav.style.right="-250px";
+    menu.onclick=function (){
+        if (nav.style.right=="-250px"){
+            nav.style.right="0";
+        }
+        else{
+            nav.style.right="-250px";
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
