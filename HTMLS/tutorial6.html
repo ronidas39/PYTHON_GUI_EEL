@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/eel.js"></script>
+
+    
+</head>
+<body>
+    <div class="container">
+    <input type="file" accept=".pdf,.doc,.docx" name="file" id="file">
+    <button id="button" style="width: 100px;background-color: green;border-radius: 0ch;" onclick="load()">submit</button>
+    <script>
+
+       
+       async function load(){
+        file=document.getElementById("file").files;
+            
+            if(file.length>0){
+                file_object=file[0];
+                
+            
+           let reader=new FileReader();
+   reader.readAsDataURL(file_object);
+   reader.onload = async function () {
+    let content=reader.result;
+     console.log(content);
+     await eel.upload(content)();
+     
+
+   };
+            }
+            
+       }
+              
+        
+        
+         </script>
+         </div>
+</body>
+</html>
